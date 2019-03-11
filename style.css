@@ -84,6 +84,13 @@ h3{
 
 #next {
 	float: right;
+	padding: 25px 35px;
+	font-size: 24px;
+}
+
+#prev {
+	padding: 25px 35px;
+	font-size: 24px;
 }
 
 
@@ -96,5 +103,6 @@ h3{
 
 
 .cont{
-	font-size: 200%;
+	font-size: 400%;
+	size: 20px;
 }

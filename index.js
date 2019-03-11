@@ -1,5 +1,7 @@
 let apiKey = "AIzaSyAR9qtEZGLZCNfmQSWqowE8Mqk1W6y89Ms";
-//AIzaSyB4NRkNulEy17ckwt2klvJAoygFDrh8hIM
+//AIzaSyAR9qtEZGLZCNfmQSWqowE8Mqk1W6y89Ms
+
+
 let maxVideos = 10;
 
 function handleFetch(link, callback) {
@@ -31,18 +33,18 @@ function displayResult(data) {
 					`);
 	});
 	if(data.hasOwnProperty('prevPageToken')) {
-		$('.display').append('<button id="previousBtn" class="navig"> < </button>');
+		$('.display').append('<button id="prev" class="navig"> < </button>');
 
-		$('#previousBtn').on('click', (event) => {
+		$('#prev').on('click', (event) => {
 			let url = 'https://www.googleapis.com/youtube/v3/search?key='+ apiKey + '&part=snippet&type=video&maxResults='+ maxVideos + '&pageToken=' + data.prevPageToken + '&q=' + $('#searchText').val();
 			handleFetch(url, displayResult);
 		});
 
 	}
 	if(data.hasOwnProperty('nextPageToken')) {
-		$('.display').append('<button id="nextBtn" class="navig"> > </button>');
+		$('.display').append('<button id="next" class="navig"> > </button>');
 
-		$('#nextBtn').on('click', (event) => {
+		$('#next').on('click', (event) => {
 			let url = 'https://www.googleapis.com/youtube/v3/search?key=' + apiKey + '&part=snippet&type=video&maxResults=' + maxVideos + '&pageToken=' + data.nextPageToken + '&q=' + $('#searchText').val();
 			handleFetch(url, displayResult);
 		});
@@ -50,7 +52,7 @@ function displayResult(data) {
 }
 
 function watchForm() {
-	$('.videoForm').on('submit', (event) => {
+	$('.youtub').on('submit', (event) => {
 		event.preventDefault();
 
 		let videos = $('#searchText').val();
