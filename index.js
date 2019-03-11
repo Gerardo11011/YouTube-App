@@ -1,7 +1,4 @@
-let apiKey = "AIzaSyAR9qtEZGLZCNfmQSWqowE8Mqk1W6y89Ms";
-//AIzaSyAR9qtEZGLZCNfmQSWqowE8Mqk1W6y89Ms
-
-
+let apiKey = 'AIzaSyCp3oY15ejWcUjY7JGxoaUrR-CTlY3_SK0';
 let maxVideos = 10;
 
 function handleFetch(link, callback) {
@@ -32,7 +29,7 @@ function displayResult(data) {
 
 					`);
 	});
-	
+
 	if(data.hasOwnProperty('nextPageToken')) {
 		$('.display').append('<button id="next"> > </button>');
 
