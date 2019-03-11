@@ -16,13 +16,11 @@ function displayResult(data) {
 	var items = data.items;
 	items.forEach(function (item) {
 
-
-		let linkVideo = 'https://www.youtube.com/watch?v=${item.id.videoId}';
     let titleVideo = item.snippet.title;
     let imageVideo = item.snippet.thumbnails.medium.url;
 
 		$('.display').append(`
-							<a href=${linkVideo} target="_blank">
+							<a href="https://www.youtube.com/watch?v=${item.id.videoId}" target="_blank">
 							<h3> ${titleVideo} </h3>
 							<img src= ${imageVideo} alt="videoThumbnail" class="center">
 							</a>
